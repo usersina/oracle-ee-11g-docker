@@ -58,6 +58,15 @@ In order to do just that, you would have to
 make delete
 ```
 
+Connect to Oracle Enterprise Management console with following settings:
+
+```txt
+http://localhost:8080/em
+user: sys
+password: oracle
+connect as sysdba: true
+```
+
 ## Initializing databases
 
 <details>

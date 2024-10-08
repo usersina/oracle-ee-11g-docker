@@ -12,7 +12,7 @@ up:		## Run Oracle xe 11g ~~and SQLDeveloper~~
 	docker compose up -d
 
 down:		## Stop Oracle ~~and SQLDeveloper~~
-	docker compose stop
+	docker compose down
 
 delete:		## Stop and remove containers and networks
 	docker compose down --volumes

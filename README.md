@@ -127,6 +127,35 @@ user: HR
 password: HR
 ```
 
+## More
+
+## Connecting as sysdba
+
+Initially, you will get an error if you attempt to do it
+
+```bash
+SQL> connect /as sysdba
+```
+
+> ERROR:
+> ORA-01031: insufficient privileges
+
+For this, you have to first `make shell` then add the default user (**root**) to the **dba** group.
+
+```zsh
+[root@container-id-abc /]# usermod -aG dba root
+[root@container-id-abc /]# newgrp dba
+```
+
+After that, you can `sqlplus SYSTEM/oracle` and run the same command again
+
+```zsh
+[root@container-id-abc /]# sqlplus SYSTEM/oracle
+SQL> connect /as sysdba
+```
+
+> Connected.
+
 ## Troubleshooting
 
 - **Ports are not available:** Either the port is in use or it is excluded by the system. See [this](https://github.com/docker/for-win/issues/9272#issuecomment-731847321) and [most importantly this](https://superuser.com/a/1610009/1024072) for windows.

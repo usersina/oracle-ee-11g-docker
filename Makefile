@@ -20,6 +20,9 @@ delete:		## Stop and remove containers and networks
 shell:		## Run a shell in the oracle container
 	docker exec -it oracledb /bin/bash
 
+sqlplus:	## Run sqlplus in the oracle container and connect as system/oracle
+	docker exec -it oracledb sqlplus system/oracle
+
 .DEFAULT:
 	@echo Unknown command $@, try make help
 
